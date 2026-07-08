@@ -1,8 +1,13 @@
 $kind: http-request
+name: ListarUsuarios
 url: https://serverest.dev/usuarios
 method: GET
 headers:
   accept: application/json
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
 scripts:
   - type: afterResponse
     code: "pm.test(\"Status Request\", function () {\r

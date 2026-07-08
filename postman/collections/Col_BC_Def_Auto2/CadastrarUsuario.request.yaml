@@ -14,6 +14,10 @@ body:
       "password": "teste",
       "administrador": "true"
     }
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
 scripts:
   - type: afterResponse
     code: "pm.test(\"Status Request\", function () {\r

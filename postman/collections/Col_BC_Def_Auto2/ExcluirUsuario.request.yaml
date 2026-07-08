@@ -4,6 +4,10 @@ url: https://serverest.dev/usuarios/{{newId}}
 method: DELETE
 headers:
   accept: application/json
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
 scripts:
   - type: afterResponse
     code: "pm.test(\"Status Request\", function () {\r
