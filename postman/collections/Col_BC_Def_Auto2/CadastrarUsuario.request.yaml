@@ -1,0 +1,29 @@
+$kind: http-request
+name: CadastrarUsuario
+url: https://serverest.dev/usuarios
+method: POST
+headers:
+  accept: application/json
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nome": "Teste {{$randomFullName}}",
+      "email": "teste_{{$timestamp}}@qa.com.br",
+      "password": "teste",
+      "administrador": "true"
+    }
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status Request\", function () {\r
+
+      \    pm.expect(pm.response.code).to.be.oneOf([201]);\r
+
+      });\r
+
+      var jsonData = JSON.parse(pm.response.text());\r
+
+      pm.environment.set(\"newId\", jsonData._id);\r\n"
+    language: text/javascript
+order: 2249208857005868

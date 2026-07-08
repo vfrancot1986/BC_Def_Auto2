@@ -23,7 +23,7 @@ scripts:
 
       });\r
 
-      var jsonData = JSON.parse(responseBody);\r
+      var jsonData = JSON.parse(pm.response.text());\r
 
       pm.environment.set(\"token\", jsonData.authorization);\r\n"
     language: text/javascript

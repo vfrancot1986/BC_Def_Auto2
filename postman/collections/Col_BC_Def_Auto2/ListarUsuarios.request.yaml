@@ -1,0 +1,14 @@
+$kind: http-request
+url: https://serverest.dev/usuarios
+method: GET
+headers:
+  accept: application/json
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status Request\", function () {\r
+
+      \    pm.expect(pm.response.code).to.be.oneOf([200]);\r
+
+      });"
+    language: text/javascript
+order: 855342278564824

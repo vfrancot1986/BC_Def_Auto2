@@ -1,4 +1,6 @@
 name: Dev
 values:
   - key: token
+    secret: true
+  - key: newId
     value: ''

@@ -1,0 +1,25 @@
+$kind: http-request
+name: AlterarUsuario
+url: https://serverest.dev/usuarios/{{newId}}
+method: PUT
+headers:
+  accept: application/json
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nome": "Teste {{$randomFullName}}",
+      "email": "teste_{{$timestamp}}@qa.com.br",
+      "password": "teste",
+      "administrador": "true"
+    }
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status Request\", function () {\r
+
+      \    pm.expect(pm.response.code).to.be.oneOf([200]);\r
+
+      });"
+    language: text/javascript
+order: 4281603496087473

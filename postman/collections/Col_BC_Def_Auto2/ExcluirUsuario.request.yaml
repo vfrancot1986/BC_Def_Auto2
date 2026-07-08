@@ -1,0 +1,15 @@
+$kind: http-request
+name: ExcluirUsuario
+url: https://serverest.dev/usuarios/{{newId}}
+method: DELETE
+headers:
+  accept: application/json
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status Request\", function () {\r
+
+      \    pm.expect(pm.response.code).to.be.oneOf([200]);\r
+
+      });"
+    language: text/javascript
+order: 4424031224931707
