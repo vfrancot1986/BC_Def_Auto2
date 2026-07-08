@@ -1,4 +1,30 @@
 $kind: http-request
-url: ""
-method: GET
+name: RealizarLoginAdmin
+url: https://serverest.dev/login
+method: POST
+headers:
+  accept: application/json
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "email": "fulano@qa.com",
+      "password": "teste"
+    }
+scripts:
+  - type: beforeRequest
+    code: ""
+    language: text/javascript
+  - type: afterResponse
+    code: "pm.test(\"Status Request\", function () {\r
+
+      \    pm.expect(pm.response.code).to.be.oneOf([200]);\r
+
+      });\r
+
+      var jsonData = JSON.parse(responseBody);\r
+
+      pm.environment.set(\"token\", jsonData.authorization);\r\n"
+    language: text/javascript
 order: 1783471044018
