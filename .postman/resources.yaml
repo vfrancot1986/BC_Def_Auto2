@@ -1,0 +1,7 @@
+workspace:
+  id: f36cba95-7b08-4227-a95a-17bec21f9ed1
+cloudResources:
+  collections:
+    ../postman/collections/Col_BC_Def_Auto2: 2659129-8c920553-7b71-460c-bb12-2a038ba09540
+  environments:
+    ../postman/environments/Dev.environment.yaml: 2659129-66c0081e-b058-4767-ad44-b1943c0a09af
