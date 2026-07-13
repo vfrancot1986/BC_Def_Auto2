@@ -1,6 +1,6 @@
 # BC_Def_Auto2
 Desafio de Automação - 02
-Projeto local calvo em: "C:/projects/BC_Def_Auto2"
+Projeto local salvo em: "C:/projects/BC_Def_Auto2"
 
 # Instalar o postman:
 https://www.postman.com/downloads/
